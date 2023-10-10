@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body style="background-color:white">
+  <br/><br/>
+  <div class="mobile_message">
+    <h1 style="text-align: center;">Oops, your screen is too small!</h1><br/>
+    <div class="w3-panel w3-pale-red w3-border" style="text-align: center;">
+        <h4>ROBUST-Web only runs on screens bigger than 768px in width.</h4>
+    </div><br/>
+  </div>
+
+    <div class="card-title" style="width:80%; margin-top:0; text-align:center; margin:auto; background-color:white">
+
+        <br/>
+
+      <h1 style="padding-bottom: 15px; padding-top:10px; text-align: center;">Single-cell spatial proteomics analysis with scAnalyzer</h1><br/><br/>
+
+      <!--iframe class="video-1251-to-above" width="1000" height="600px" src="https://www.youtube.com/embed/y881t8ilMyc" frameborder="0" allowfullscreen></iframe></iframe-->
+      <iframe class="video-1251-to-above" width="1000px" height="600px" src="https://www.youtube.com/embed/B4GXytD1B7o" frameborder="0" allowfullscreen></iframe></iframe>
+      <iframe class="video-1001-to-1250" width="800px" height="600px" src="https://www.youtube.com/embed/B4GXytD1B7o" frameborder="0" allowfullscreen></iframe></iframe>
+      <iframe class="video-861-to-1000" width="700px" height="600px" src="https://www.youtube.com/embed/B4GXytD1B7o" frameborder="0" allowfullscreen></iframe></iframe>
+      <iframe class="video-769-to-860" width="600px" height="600px" src="https://www.youtube.com/embed/B4GXytD1B7o" frameborder="0" allowfullscreen></iframe></iframe>
+
+        <br/><br/><br/><br/>
+
+    </div><br/>
+
+    <!-- <div style="margin-top: 10px; padding: 10px;">
+      {% if error_run_scAnalyzer=='1.0' %}     
+        <script>
+          alert("Protein expression data path cannot be empty");
+        </script>
+  
+      {% else %}
+          1
+      {% endif %}
+          
+    </div> -->
+
+
+    <form action="/run_scAnalyzer" method="POST" style="align-items:center;"> 
+          <div class="goto_RunRobust_div" style="width:80%; margin-top:0; text-align:center; margin:auto;">
+              <!-- <a href="/run_robust" class="btn btn-primary" id="goto_RunRobust">Run ROBUST</a> -->
+              <!--input type="checkbox" name="patient_id" value="20751_TCL" checked>
+              <label for="vehicle3"> Patient 20751 (TCL)</label><br><br-->
+                  <div class="horizontal">
+                              <div class="param_div vertical">
+                                <br/><br/>
+                                    <div>
+                                      <label class="_labels_" for="fname">Upload protein expression data</label>
+                                      <input class="text-box" type="text" id="fname" name="path_to_pe_data" placeholder="Enter path to protein expression data">
+                                    </div>
+                                    <br/><br/><br/>
+                                    <!------------------------------------>
+                                  <div>
+                                    <div>
+                                      <label>Relative area-wise expression</label><br>
+                                      <input class='range__slider' id='alpha_slider' max='1.00' min='0.00' oninput='alpha.value=alpha_slider.value' type='range' value='0.50' step="0.01" aria-describedby="alpha_slider" placeholder="alpha" name="alpha_slider">
+                                      <input id="alpha" oninput='alpha_slider.value=alpha.value' required='' type='number' class="alpha" value='0.50' aria-describedby="alpha" name="alpha" max='1.00' min='0.00' step="0.01" pattern="^\d*(\.\d{0,2})?$"/>
+                                      <label alt='alpha = ?' placeholder='alpha'></label>
+                                      <br/>
+                                    </div>
+                                    <!------------------------------------>
+                                    
+                                    <div class="help-number-input">
+                                      <div class="help-button" data-toggle="popover" data-placement="top" data-content="alpha is a measure of allowed diversion from the cheapest Steiner tree. Setting alpha = 0 only returns the best Steiner tree.">&#63;</div>
+                                    </div>
+                                  </div>
+                              </div>
+                  </div>
+                      <div class="run-robust-div">
+                        <input id='myButton' type="submit" class="run-robust-button" value="Prepare protein expression data">
+                      </div>
+          </div>
+    </form>
+
+<br/>
+
+<form action="/delete_data" method="POST" style="align-items:center;"> 
+  <div style="width:80%; margin-top:0; text-align:center; margin:auto;">
+    <!--div class="param_div run-robust-div"-->
+      <input class="data-delete-button" id='data-delete-button' type="submit" value="Delete data">
+    <!--/div-->
+  </div>
+</form>
+
+<style>
+
+
+
+</style>
+    
+
+
+    <br/><br/><br/>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<style>
+  
+
+/* input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+} */
+</style>
+
+
+    
+
+<!--/div-->
+
+</body>
+{% endblock %}

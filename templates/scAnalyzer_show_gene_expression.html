@@ -1,0 +1,1319 @@
+<script src="static/script/javascript.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--meta id="my-data" data-name="{{name}}" data-other="{{other}}"-->
+
+<!--script src="https://code.highcharts.com/highcharts.js"></script-->
+<script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/stock/modules/accessibility.js"></script>
+
+<script type="text/javascript" src="http://code.highcharts.com/stock/highstock.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<style>
+  #container {
+    height: 1600px;
+    width: 500px;
+}
+
+
+.help-number-input {
+  position: relative;
+  /* Adjust these values accordingly */
+  top: 0px;
+  right: 0px;
+}
+
+.help-button {
+  background-color: #FF4500;
+  color: white;
+  border: none;
+  padding: 1px;
+  font-size: 12px;
+  /* font-weight: bold; */
+  height: 20px;
+  width: 20px;
+  box-shadow: 0 2px 4px #9C3F1E;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.help-button {
+  border-radius: 70%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.slider__inner .slider__contents
+{
+    display:block;
+    /* vertical-align:middle;
+    height: 100%;
+    width: 100%; */
+}
+
+</style>
+
+
+<body style="background-color:white">
+  <div style="overflow-x: auto; overflow-y: auto; white-space: nowrap; overflow: auto; white-space: nowrap;">
+          <div class="slider">
+            <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide2" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide3" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide4" class="slider__nav"/>
+            <div class="slider__inner">
+              <div class="slider__contents"><!--i class="slider__image fa fa-codepen"></i-->
+                <!--div class="float-child1" style="overflow-x: auto; overflow-y: auto; white-space: nowrap; overflow: auto; white-space: nowrap;"-->
+                  <div class="container-overall-spatial-protein-expression-for-selected-proteins"><div id='container-overall-spatial-protein-expression-for-selected-proteins' class="container-overall-spatial-protein-expression-for-selected-proteins"></div></div>
+                <!--/div-->
+              </div>
+              <div class="slider__contents"><i class="slider__image fa fa-newspaper-o"></i>
+                <h2 class="slider__caption">newspaper-o</h2>
+                <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+              </div>
+              <div class="slider__contents"><i class="slider__image fa fa-television"></i>
+                <h2 class="slider__caption">television</h2>
+                <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+              </div>
+              <div class="slider__contents"><i class="slider__image fa fa-diamond"></i>
+                <h2 class="slider__caption">diamond</h2>
+                <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+              </div>
+            </div>
+          </div>
+</div>
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: #444;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.slider {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.slider__nav {
+  width: 12px;
+  height: 12px;
+  margin: 2rem 12px;
+  border-radius: 50%;
+  z-index: 10;
+  outline: 6px solid #ccc;
+  outline-offset: -6px;
+  box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.slider__nav:checked {
+  -webkit-animation: check 0.4s linear forwards;
+          animation: check 0.4s linear forwards;
+}
+.slider__nav:checked:nth-of-type(1) ~ .slider__inner {
+  left: 0%;
+}
+.slider__nav:checked:nth-of-type(2) ~ .slider__inner {
+  left: -100%;
+}
+.slider__nav:checked:nth-of-type(3) ~ .slider__inner {
+  left: -200%;
+}
+.slider__nav:checked:nth-of-type(4) ~ .slider__inner {
+  left: -300%;
+}
+.slider__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 100%;
+  -webkit-transition: left 0.4s;
+  transition: left 0.4s;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+.slider__contents {
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.slider__image {
+  font-size: 2.7rem;
+      color: #2196F3;
+}
+.slider__caption {
+  font-weight: 500;
+  margin: 2rem 0 1rem;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+}
+.slider__txt {
+  color: #999;
+  margin-bottom: 3rem;
+  max-width: 300px;
+}
+
+@-webkit-keyframes check {
+  50% {
+    outline-color: #333;
+    box-shadow: 0 0 0 12px #333, 0 0 0 36px rgba(51, 51, 51, 0.2);
+  }
+  100% {
+    outline-color: #333;
+    box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
+  }
+}
+
+@keyframes check {
+  50% {
+    outline-color: #333;
+    box-shadow: 0 0 0 12px #333, 0 0 0 36px rgba(51, 51, 51, 0.2);
+  }
+  100% {
+    outline-color: #333;
+    box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
+  }
+}
+
+</style>
+
+  <div class="help-number-input">
+    <!--button type="button" class="help-button" data-toggle="popover" data-placement="top" data-content="beta modifies the decrease of the values for integrating non-seeds into the trees. Setting beta = 0 will only give a value to a non-seed until its first appearance in one tree.">&#63;</button-->
+    <button type="button" class="help-button" 
+        data-toggle="popover" title="Popover title" 
+        data-content="And here's some amazing content. It's very engaging. Right?">
+        &#63;
+    </button>
+  </div>
+
+                <!----------------->
+                <form action="/results_node_characteristics" method="POST" style="align-items:center;" enctype="multipart/form-data">
+                                <div class="wrap-collabsible">
+                                                <input id="collapsible" class="toggle" type="checkbox" hidden> 
+                                                <label for="collapsible" class="lbl-toggle">Node characteristics</label>
+                                                <div class="collapsible-content">
+                                                                <div class="float-container">
+                                                                            <div style="text-align:center;">
+                                                                              <h4>Representativeness</h4>
+                                                                              <h8>Top 20 terms</h8>
+                                                                              <div class="help-number-input">
+                                                                                <div class="help-button" data-toggle="popover" data-placement="top" data-content="beta modifies the decrease of the values for integrating non-seeds into the trees. Setting beta = 0 will only give a value to a non-seed until its first appearance in one tree.">&#63;</div>
+                                                                              </div>
+                                                                            </div>
+                                                                            <br/>
+                                                                            <!-- <div class="float-child1" style="height: 100000px;">
+                                                                                    <div class="container-gene-expression"><div id='container-gene-expression-bubble-plot' class="container-gene-expression-bubble-plot"></div></div>
+                                                                            </div> -->
+                                                                </div>
+                                                                <input id='myButton' type="submit" class="run-robust-button" formtarget="_blank" value="Explore more">
+                                                </div>
+                                </div>
+                </form>
+                <!----------------->
+
+<form action="/results_edge_characteristics" method="POST" style="align-items:center;" enctype="multipart/form-data">
+  
+  <div class="wrap-collabsible">
+    <input id="collapsible_edge" class="toggle" type="checkbox" hidden> 
+    <label for="collapsible_edge" class="lbl-toggle">Edge characteristics</label>
+    <div class="collapsible-content">
+      <!--div class="content-inner"-->    
+
+  <div class="float-container">
+    <div class="float-child1">
+      <div class="containerzzz"><div id='containerzzz' class="containerzzz"></div></div>
+    </div>
+
+    
+    <!--div class="float-child2">
+      <div class="blue">Float Column 2</div>
+    </div-->
+  </div>
+  <div id="myDIV">
+    <!--ul id="myList"></ul-->
+  </div>
+  <!--ol id="list"></ol-->
+  <ul id="list"></ul>
+  <!--ul id="list2"></ul-->
+  
+
+
+
+<p>Read list:</p>
+<ul id="read-list"></ul>
+
+  <!--br/><br/><br/><br/-->
+  <div class="run-robust-div">
+    <input id='myButton' type="submit" class="run-robust-button" formtarget="_blank" value="Explore more">
+  </div>
+
+
+<!--/div-->
+</div>
+</div>
+
+
+<!--figure class="highcharts-figure"-->
+  <!--div id="container-gene-expression-bubble-plot"></div>
+  <p class="highcharts-description">
+      Chart showing basic use of bubble series with a custom tooltip formatter.
+      The chart uses plot lines to show safe intake levels for sugar and fat.
+      Bubble charts are great for comparing three dimensions of data without
+      relying on color or 3D charts.
+  </p-->
+<!--/figure-->
+
+
+
+
+</form>
+
+<style>
+  .flex-container{
+      width: 100%;
+      min-height: 300px;
+      margin: 0 auto;
+      display: -webkit-flex; /* Safari */     
+      display: flex; /* Standard syntax */
+
+      overflow-x: auto;
+      overflow-y: auto;
+      /* overflow-y: scroll; */
+      scrollbar-width: thin;
+      white-space: nowrap;
+      height: 1000px;
+  }
+  .flex-container .column{
+      padding: 10px;
+      background: #dbdfe5;
+      -webkit-flex: 1; /* Safari */
+      -ms-flex: 1; /* IE 10 */
+      flex: 1; /* Standard syntax */
+  }
+  .flex-container .column.bg-alt{
+      background: #b4bac0;
+  }
+  </style>
+  </head>
+  <body>
+      <div class="flex-container">
+          <div class="column">Column 1</div>
+          <div class="column bg-alt">Column 2</div>
+      </div>
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <style>
+  .scroller {
+  width: 1000px;
+  height: 1000px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+</style> -->
+
+<div class="flex-container scroller">
+  <div class="float-child1" style="overflow-x: auto; overflow-y: auto; white-space: nowrap; overflow: auto; white-space: nowrap;">
+    <div class="container-overall-spatial-protein-expression-for-selected-proteins"><div id='container-overall-spatial-protein-expression-for-selected-proteins' class="container-overall-spatial-protein-expression-for-selected-proteins"></div></div>
+  </div>
+
+  <div class="analysis-panel">
+    Analysis panel
+    <div class="detail" id="detail" style="min-width: 400px; height: 300px; margin: 0 auto"></div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+
+RETURN_LIST={{RETURN_LIST | safe}};
+
+/////////////////////////////////////  container-overall-spatial-protein-expression-for-selected-proteins:  ///////////////////////////////////////////////////////
+
+Highcharts.chart('container-overall-spatial-protein-expression-for-selected-proteins', {
+
+  chart: {
+      type: 'bubble',
+      plotBorderWidth: 1,
+      // width: 1000,
+      height: 1000
+      // zoomType: 'xy'
+  },
+
+  legend: {
+      enabled: false
+  },
+
+  yAxis: {
+      min: -10,
+      max: 2028,
+      startOnTick: false,
+      endOnTick: false,
+      gridLineWidth: 1,
+      title: {
+          text: 'y'
+      },
+      labels: {
+          format: '{value}'
+      },
+  },
+
+  xAxis: {
+      min: -10,
+      max: 2028,
+      startOnTick: false,
+      endOnTick: false,
+      gridLineWidth: 1,
+      title: {
+          text: 'x'
+      },
+      labels: {
+          format: '{value}'
+      },
+  },
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+
+title: {
+    text: 'Cellular gene expression'
+},
+
+subtitle: {
+    text: 'Equation'
+},
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+accessibility: {
+    point: {
+        valueDescriptionFormat: '{index}. {point.name}, fat: {point.x}g, sugar: {point.y}g, obesity: {point.z}%.'
+    }
+},
+
+// xAxis: {
+//     gridLineWidth: 1,
+//     title: {
+//         text: 'Daily fat intake'
+//     },
+//     labels: {
+//         format: '{value} gr'
+//     },
+//     plotLines: [{
+//         color: 'black',
+//         dashStyle: 'dot',
+//         width: 2,
+//         value: 65,
+//         label: {
+//             rotation: 0,
+//             y: 15,
+//             style: {
+//                 fontStyle: 'italic'
+//             },
+//             text: 'Safe fat intake 65g/day'
+//         },
+//         zIndex: 3
+//     }],
+//     accessibility: {
+//         rangeDescription: 'Range: 60 to 100 grams.'
+//     }
+// },
+
+tooltip: {
+    useHTML: true,
+    headerFormat: '<table>',
+    pointFormat: '<tr><th colspan="2"><h3>{point.country}</h3></th></tr>' +
+        '<tr><th>Fat intake:</th><td>{point.x}g</td></tr>' +
+        '<tr><th>Sugar intake:</th><td>{point.y}g</td></tr>' +
+        '<tr><th>Obesity (adults):</th><td>{point.z}%</td></tr>',
+    footerFormat: '</table>',
+    followPointer: true
+},
+
+plotOptions: {
+  bubble: {
+            minSize: 10,
+            maxSize: 10,
+      },
+    series: {
+        dataLabels: {
+            enabled: true,
+            format: '{point.name}'
+        }
+    }
+},
+
+series: [{
+    data: RETURN_LIST,
+    
+    colorByPoint: true,
+    point: {
+    events: {
+      click: function () {
+                    alert('Category: ' + this.x + ', value: ' + this.y);
+                    var point = this;
+        console.log(point);
+        console.log('----------');
+        console.log(point.CELL_AREA_LIST_DICT);
+        Highcharts.chart('detail', {
+            // title: {
+            //     text: point.name + ':' + point.y
+            // },
+            // series: [{
+            //     data: [1, 2, 3]
+            // }]
+
+            chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Browser market shares in May, 2020',
+        align: 'left'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
+        }
+    },
+    series: 
+    [{
+    //     name: 'Brands',
+    //     colorByPoint: true,
+    //     data: [{
+    //         name: 'Chrome',
+    //         y: 70.67,
+    //         sliced: true,
+    //         selected: true
+    //     }, {
+    //         name: 'Edge',
+    //         y: 14.77
+    //     },  {
+    //         name: 'Firefox',
+    //         y: 4.86
+    //     }, {
+    //         name: 'Safari',
+    //         y: 2.63
+    //     }, {
+    //         name: 'Internet Explorer',
+    //         y: 1.53
+    //     },  {
+    //         name: 'Opera',
+    //         y: 1.40
+    //     }, {
+    //         name: 'Sogou Explorer',
+    //         y: 0.84
+    //     }, {
+    //         name: 'QQ',
+    //         y: 0.51
+    //     }, {
+    //         name: 'Other',
+    //         y: 2.6
+    //     }]
+    
+    data: point.CELL_AREA_LIST_DICT
+  
+    }]
+
+    
+
+        });
+                },
+      
+    }
+    }
+}]
+
+});
+
+
+function renderSecond(e) {
+        var point = this;
+        console.log(point);
+        $("#detail").highcharts({
+            // title: {
+            //     text: point.name + ':' + point.y
+            // },
+            // series: [{
+            //     data: [1, 2, 3]
+            // }]
+
+            chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Browser market shares in May, 2020',
+        align: 'left'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
+        }
+    },
+    series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        data: [{
+            name: 'Chrome',
+            y: 70.67,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'Edge',
+            y: 14.77
+        },  {
+            name: 'Firefox',
+            y: 4.86
+        }, {
+            name: 'Safari',
+            y: 2.63
+        }, {
+            name: 'Internet Explorer',
+            y: 1.53
+        },  {
+            name: 'Opera',
+            y: 1.40
+        }, {
+            name: 'Sogou Explorer',
+            y: 0.84
+        }, {
+            name: 'QQ',
+            y: 0.51
+        }, {
+            name: 'Other',
+            y: 2.6
+        }]
+    }]
+        });
+    }
+
+/////////////////////////////////////  container-venn-diagram-for-selected-proteins:  ///////////////////////////////////////////////////////
+
+</script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div>
+    <button type="button" id="logical-and">&</button>
+    <button type="button" id="logical-or">|</button>
+    <button type="button" id="logical-not">~</button>
+    <button type="button" id="bracket-open">(</button>
+    <button type="button" id="bracket-close">)</button>
+    <label>Select a Language You Want To Learn:</label>
+    <select id="dropDown">
+      <option value="select">Select...</option>
+      <option value="HTML">HTML</option>
+      <option value="CSS">CSS</option>
+      <option value="JavaScript">JavaScript</option>
+      <option value="Java">Java</option>
+      <option value="Python">Python</option>
+    </select>
+    <label>Selected Language:</label>
+    <!--input type="text" id="textBox" readonly-->
+    <input type="text" id="textBox">
+  </div>
+
+
+<style>
+
+.float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+
+.float-child1 {
+    width: 70%;
+    float: left;
+    padding: 20px;
+    border: 2px solid red;
+}
+
+.analysis-panel{
+    width: 40%;
+    float: right;
+    padding: 20px;
+    border: 2px solid red;
+}
+
+.float-child2 {
+    width: 0%;
+    float: left;
+    padding: 20px;
+    border: 2px solid red;
+}
+
+.container-representativeness-parent {
+    /* margin-left: 100px; */
+}
+
+</style>
+
+<!---======================================================================================================================--->
+
+<!-- <div class="example-parent">
+  <h1>To-do list</h1>
+  <div class="example-origin">
+    To-do
+    <div
+      id="draggable-1"
+      class="example-draggable"
+      draggable="true"
+      ondragstart="onDragStart(event);"
+    >
+      thing 1
+    </div>
+    <div
+      id="draggable-2"
+      class="example-draggable"
+      draggable="true"
+      ondragstart="onDragStart(event);"
+    >
+      thing 2
+    </div>
+    <div
+      id="draggable-3"
+      class="example-draggable"
+      draggable="true"
+      ondragstart="onDragStart(event);"
+    >
+      thing 3
+    </div>
+    <div
+      id="draggable-4"
+      class="example-draggable"
+      draggable="true"
+      ondragstart="onDragStart(event);"
+    >
+      thing 4
+    </div>
+  </div>
+
+  <div
+    class="example-dropzone"
+    ondragover="onDragOver(event);"
+    ondrop="onDrop(event);"
+  >
+    Done
+  </div>
+</div> -->
+
+<!-- <style>
+  example-parent {
+  border: 2px solid #DFA612;
+  color: black;
+  display: flex;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.example-origin {
+  flex-basis: 100%;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.example-draggable {
+  background-color: #4AAE9B;
+  font-weight: normal;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.example-dropzone {
+  background-color: #6DB65B;
+  flex-basis: 100%;
+  flex-grow: 1;
+  padding: 10px;
+}
+</style> -->
+
+<!-- <script>
+function onDragStart(event) {
+  event
+    .dataTransfer
+    .setData('text/plain', event.target.id);
+
+  event
+    .currentTarget
+    .style
+    .backgroundColor = 'yellow';
+}
+
+function onDragOver(event) {
+  event.preventDefault();
+}
+
+function onDrop(event) {
+  const id = event
+    .dataTransfer
+    .getData('text');
+
+    const draggableElement = document.getElementById(id);
+
+    const dropzone = event.target;
+
+    dropzone.appendChild(draggableElement);
+
+    event
+    .dataTransfer
+    .clearData();
+
+}
+
+</script> -->
+
+<!------------------------------------------------------------------------------->
+
+<!-- <span class="drag-me" draggable="true">Drag me to the boxes below!</span>
+
+<div class="editor">
+  <textarea>While dragging over you should observe the cursor indicating the place where dragged text will appear.</textarea>
+</div>
+
+<div class="editor" contenteditable="true">While dragging over you should observe the cursor indicating the place where dragged text will appear.</div>
+
+<style>
+span.drag-me {
+  background: #ffc600;
+}
+
+.editor {
+  margin-top: 1em;
+  width: 400px;
+  height: 120px;
+  display: grid;
+}
+
+.editor[contenteditable=true] {
+  display: block;
+  padding: 4px;
+  border: 1px solid green;
+}
+</style>
+
+<script>
+document.querySelector('span.drag-me').addEventListener('dragstart', e => {
+  e.dataTransfer.setData('text/plain', e.target.textContent);
+  e.dataTransfer.setData('text/html', e.target.outerHTML);
+});
+</script> -->
+
+<!------------------------------------------------------------------------------->
+
+
+<script>
+const dropDown = document.getElementById('dropDown');
+const textBox = document.getElementById('textBox');
+dropDown.addEventListener('change', (event) => {
+  var currentVal = $('#textBox').val();
+  var newVal = currentVal + event.target.value;
+  $('#textBox').val(newVal);
+  // const selectedLanguage = event.target.value;
+  // textBox.value = selectedLanguage;
+ });
+
+ 
+ $('#logical-and').click(function () {
+  var currentVal = $('#textBox').val();
+  var newVal = currentVal + $(this).text();
+  $('#textBox').val(newVal);
+});
+
+$('#logical-or').click(function () {
+  var currentVal = $('#textBox').val();
+  var newVal = currentVal + $(this).text();
+  $('#textBox').val(newVal);
+});
+
+$('#logical-not').click(function () {
+  var currentVal = $('#textBox').val();
+  var newVal = currentVal + $(this).text();
+  $('#textBox').val(newVal);
+});
+
+$('#bracket-open').click(function () {
+  var currentVal = $('#textBox').val();
+  var newVal = currentVal + $(this).text();
+  $('#textBox').val(newVal);
+});
+
+$('#bracket-close').click(function () {
+  var currentVal = $('#textBox').val();
+  var newVal = currentVal + $(this).text();
+  $('#textBox').val(newVal);
+});
+
+</script>
+
+
+
+<script>
+  $('#js-AddFilterOpenBracket').click(function () {
+  var currentVal = $('#js-FilterString').val();
+  var newVal = currentVal + $(this).text();
+  $('#js-FilterString').val(newVal);
+});
+</script>
+
+
+
+
+<!---======================================================================================================================--->
+
+
+
+
+
+
+
+  
+</body>
+
+
+<!-- <style>
+  .highcharts-figure,
+.highcharts-data-table table {
+    min-width: 320px;
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+</style> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+// function renderSecond(e) {
+//         var point = this;
+//         console.log(point);
+//         $("#detail").highcharts({
+//             title: {
+//                 text: point.name + ':' + point.y
+//             },
+//             series: [{
+//                 data: [1, 2, 3]
+//             }]
+//         });
+//     }
+
+// return_list=[cellNames_coordinatesX_dict[DISPLAY_relativeAreaWise_nuclear_expression_count.Cell_names.iloc[index]], cellNames_coordinatesY_dict[DISPLAY_relativeAreaWise_nuclear_expression_count.Cell_names.iloc[index]], genes_expressed, gene_expression, DISPLAY_relativeAreaWise_nuclear_expression_count.Cell_names.iloc[index]]
+// return_dict=dict(zip(return_dict_template, return_list))
+// RETURN_LIST.append(return_dict)
+
+RETURN_LIST={{RETURN_LIST | safe}}
+
+Highcharts.chart('container-gene-expression-bubble-plot', {
+
+  chart: {
+      type: 'bubble',
+      plotBorderWidth: 1,
+      width: 1000,
+      height: 1000
+      // zoomType: 'xy'
+  },
+
+  legend: {
+      enabled: false
+  },
+
+  // title: {
+      // text: 'Sugar and fat intake per country'
+  // },
+
+  // subtitle: {
+      // text: 'Source: <a href="http://www.euromonitor.com/">Euromonitor</a> and <a href="https://data.oecd.org/">OECD</a>'
+  // },
+
+  // accessibility: {
+      // point: {
+          // valueDescriptionFormat: '{index}. {point.name}, fat: {point.x}g, sugar: {point.y}g, obesity: {point.z}%.'
+      // }
+  // },
+
+  yAxis: {
+      min: -10,
+      max: 2028,
+      startOnTick: false,
+      endOnTick: false,
+  },
+
+  xAxis: {
+      min: -10,
+      max: 2028,
+      startOnTick: false,
+      endOnTick: false,
+      gridLineWidth: 1,
+      title: {
+          text: 'x'
+      },
+      labels: {
+          // format: '{value} gr'
+          format: '{value}'
+      },
+      // plotLines: [{
+          // color: 'black',
+          // dashStyle: 'dot',
+          // width: 2,
+          // value: 65,
+          // label: {
+              // rotation: 0,
+              // y: 15,
+              // style: {
+                  // fontStyle: 'italic'
+              // },
+              // text: 'Safe fat intake 65g/ day'
+          // },
+          // zIndex: 3
+      // }],
+      // accessibility: {
+          // rangeDescription: 'Range: 60 to 100 grams.'
+      // }
+  },
+
+  // yAxis: {
+  //     min: 0,
+  //     max: 2018,
+  //     // startOnTick: false,
+  //     // endOnTick: false,
+  //     // title: {
+  //         // text: 'Daily sugar intake'
+  //     // },
+  //     // labels: {
+  //         // format: '{value} gr'
+  //     // },
+  //     // maxPadding: 0.2,
+  //     // plotLines: [{
+  //         // color: 'black',
+  //         // dashStyle: 'dot',
+  //         // width: 2,
+  //         // value: 50,
+  //         // label: {
+  //             // align: 'right',
+  //             // style: {
+  //                 // fontStyle: 'italic'
+  //             // },
+  //             // text: 'Safe sugar intake 50g/day',
+  //             // x: -10
+  //         // },
+  //         // zIndex: 3
+  //     // }],
+  //     // accessibility: {
+  //         // rangeDescription: 'Range: 0 to 160 grams.'
+  //     // }
+  // },
+
+  // tooltip: {
+      // useHTML: true,
+      // headerFormat: '<table>',
+      // pointFormat: '<tr><th colspan="2"><h3>{point.country}</h3></th></tr>' +
+          // '<tr><th>Fat intake:</th><td>{point.x}g</td></tr>' +
+          // '<tr><th>Sugar intake:</th><td>{point.y}g</td></tr>' +
+          // '<tr><th>Obesity (adults):</th><td>{point.z}%</td></tr>',
+      // footerFormat: '</table>',
+      // followPointer: true
+  // },
+
+  plotOptions: {
+      bubble: {
+            minSize: 2,
+            maxSize: 2,
+      },
+
+      series: {
+          dataLabels: {
+              enabled: true,
+              // // // format: '{point.name}'
+    //           point: {
+    //   events: {
+    //     click: function() {
+    //     var point = this;
+    //     console.log(point);
+    //     $("#detail").highcharts({
+    //         title: {
+    //             text: point.x + ':' + point.y
+    //         },
+    //         series: [{
+    //             data: [1, 2, 3]
+    //         }]
+    //     });
+    // }
+    //   }
+    // },
+    
+
+            point: {
+        events: {
+        	click: function (e) {
+                        console.log('Hey!')
+                        alert('Hey!')
+                        alert('Category: ' + this.x + ', value: ' + this.y);
+                    }
+        }
+        }
+
+            
+          }
+      }
+  },
+
+  series: [{
+      data: RETURN_LIST,
+     
+     // colorByPoint: true
+      
+    // tooltip: {
+    // pointFormat: ''
+    // },
+  
+  
+  }]
+
+});
+
+</script>
+
+
+
+{% endblock %}

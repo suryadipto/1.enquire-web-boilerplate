@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--First, at the top of the page we need to implement this functionality (only for run_robust):-->
+<!--Page reload as soon as user navigates to 'run_robust' page using the back navigation (either BUTTON or CHROME BACK select).-->
+<!--Becuse we do not want to see the previous settings on the new page, but the default settings instead.-->
+
+<script>
+// // Old code (uncomment if the other one does not work perfectly):
+//   window.addEventListener( "pageshow", function ( event ) {
+//   var historyTraversal = event.persisted || 
+//                          ( typeof window.performance != "undefined" && 
+//                               window.performance.navigation.type === 2 );
+//   if ( historyTraversal ) {
+//     // Handle page restore.
+//     window.location.reload();
+//   }
+// });
+
+// // New code (this works well):
+var perfEntries = performance.getEntriesByType("navigation");
+if (perfEntries[0].type === "back_forward") {
+    location.reload(true);
+}
+</script>
+
+<body style="background-color:white">
+  <br/><br/>
+  <div class="mobile_message">
+    <h1 style="text-align: center;">Oops, your screen is too small!</h1><br/>
+    <div class="w3-panel w3-pale-red w3-border" style="text-align: center;">
+        <h4>scAnalyzer only runs on screens bigger than 768px in width.</h4>
+    </div><br/>
+  </div>
+  
+
+  {% if error %}
+    <!-- <script>
+      alert("{{error}}");
+    </script> -->
+  {% endif %}
+  
+  <!---------------------------------------------------------------------------------------------->
+  <div class="card-title" style="width:80%; margin-top:0; text-align:center; margin:auto; background-color:white;">
+
+    <h2>Gene expression</h2><br/><br/><br>
+
+    <figure>
+      <img src="/spatial_proteomics/feature_extraction/figures/scanpy.jpg" height="150" width="90">
+      <figcaption>Your label goes here</figcaption>
+    </figure>
+
+
+<!--embed
+    src="/spatial_proteomics/feature_extraction/figures/scanpy.jpg"
+    type="application/pdf"
+    frameBorder="0"
+    scrolling="auto"
+    height="100%"
+    width="100%"
+></embed-->
+
+
+
+
+  </div>
+
+<!---------------------------------------------------------------------------------------------->
+
+<div class="card-title" style="width:80%; margin-top:0; text-align:center; margin:auto; background-color:white;">
+</div>
+
+
+<style>
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+
+  border-radius: 40px;
+  background-color: #00008B;
+  border: none;
+  color: #FFFFFF;
+  font-style:normal;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  font-size:15px;
+  width: 250px;
+  font-weight: normal;
+  position: relative;
+  /* Adjust these values accordingly */
+  top: 90px;
+  right: 205px;
+}
+</style>
+</body>
+{% endblock %}

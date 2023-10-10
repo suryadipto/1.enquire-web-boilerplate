@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+                        {% if error_flag==0 %}
+                          <script type="text/javascript">
+                           alert("Patient 20751 (TCL) data loaded successfully!");   
+                          </script>
+                        {% elif error_flag==1 %}
+                          <script type="text/javascript">
+                            alert("Data load unsuccessful!");   
+                          </script>
+                        {% endif %}
+<body>
+
+<a download="" href="static/videos/df___relativeAreaWise_nuclear_expression_count.csv">Download protein expression data</a>
+
+<br/><br/><br/><br/><br/><br/>
+
+<form action="/scAnalyzer" method="POST" style="align-items:center;">
+  <select class="optional-params-dropdown-style" id="use_case_study_data" aria-describedby="normalize" placeholder="normalize" name="analysis-option-selected" onchange="reset_values_case_study();">
+    <option value="" selected>Choose one (optional)</option>
+    <option value="scanpy">Run single-cell analyses (scanpy)</option>
+    <option value="squidpy">Run spatial single-cell analyses (squidpy)</option>
+    <option value="scViz">Run visualitaions (scViz, Drugst.One)</option>
+    <option value="scML">Run ML-based analyses (scML)</option>
+  </select>
+  
+  <div class="run-robust-div">
+    <input id='myButton' type="submit" class="run-robust-button" value="Run analyses">
+  </div>
+</form>
+
+
+</body>
+{% endblock %}
